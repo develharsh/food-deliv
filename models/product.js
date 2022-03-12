@@ -46,6 +46,10 @@ const productSchema = new mongoose.Schema(
       ref: "SubCategory",
       required: true,
     },
+    daySpecific: {
+      type: Array,
+      default: [],
+    },
   },
   { timestamps: true }
 );

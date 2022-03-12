@@ -36,3 +36,14 @@ exports.validateAddCategory = function (data) {
 exports.validateAddSubCategory = function (data) {
   return data;
 };
+
+exports.validateGetAllProducts = function (req) {
+  let filter = {};
+  const { daySpecific, title, category, subcategory } = req.query;
+  if (daySpecific) filter.daySpecific = Number(daySpecific);
+  if (title) filter.title = new RegExp(title, "i");
+  if (category) filter.category = category;
+  if (subcategory) filter.subcategory = subcategory;
+  req.body = filter;
+  return req;
+};
