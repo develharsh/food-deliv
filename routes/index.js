@@ -20,4 +20,8 @@ router.use("/product", Product);
 const Category = require("./category");
 router.use("/category", Category);
 
+// @SubCategory
+const SubCategory = require("./subcategory");
+router.use("/subcategory", SubCategory);
+
 module.exports = router;
